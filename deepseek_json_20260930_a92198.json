@@ -1,0 +1,17 @@
+{
+  "name": "Lumen 音效库",
+  "short_name": "Lumen",
+  "theme_color": "#1A1A2E",
+  "sounds": [
+    {
+      "file": "sounds/Lumen-Feliz.mp3",
+      "title": "Lumen - 开心",
+      "key": "1"
+    },
+    {
+      "file": "sounds/Gato-Aburrimiento.mp3",
+      "title": "Gato - 无聊",
+      "key": "q"
+    }
+  ]
+}
