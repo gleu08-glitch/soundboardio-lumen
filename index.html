@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lumen Soundboard</title>
+    <meta name="description" content="Optimized Lumen soundboard demo with low-latency interaction." />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Lumen</p>
+          <h1>Character soundboard</h1>
+        </div>
+        <span class="status-pill">Fast path</span>
+      </header>
+
+      <section class="soundboard-container" aria-live="polite">
+        <div id="soundboard" class="soundboard" aria-label="Soundboard controls"></div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

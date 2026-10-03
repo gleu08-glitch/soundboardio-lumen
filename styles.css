@@ -1,0 +1,136 @@
+:root {
+  --bg: #0f1220;
+  --panel: rgba(26, 27, 42, 0.94);
+  --panel-border: rgba(203, 213, 225, 0.14);
+  --text: #edf2ff;
+  --muted: #b8bed6;
+  --primary: #8b5cf6;
+  --primary-strong: #7c3aed;
+  --accent: #22d3ee;
+  --shadow: rgba(15, 18, 32, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  font-family: Inter, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #171b2d 0%, var(--bg) 48%);
+  color: var(--text);
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.app-shell {
+  width: min(90vw, 980px);
+  padding: 2rem;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  border-radius: 22px;
+  box-shadow: 0 18px 42px var(--shadow);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.25rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.status-pill {
+  border: 1px solid rgba(34, 211, 238, 0.28);
+  background: rgba(34, 211, 238, 0.1);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.soundboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.9rem;
+}
+
+.sound-card {
+  appearance: none;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9));
+  color: var(--text);
+  padding: 1rem 1rem 0.8rem;
+  min-height: 105px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.85rem;
+  cursor: pointer;
+  transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.sound-card:hover,
+.sound-card:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(139, 92, 246, 0.7);
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.24);
+}
+
+.sound-card:active,
+.sound-card.playing {
+  transform: scale(0.985);
+  border-color: rgba(34, 211, 238, 0.7);
+}
+
+.key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 10px;
+  background: rgba(139, 92, 246, 0.18);
+  color: #ddd6fe;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.label {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 600px) {
+  .app-shell {
+    padding: 1.2rem;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
